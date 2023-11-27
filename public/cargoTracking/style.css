@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    background: hsl(203, 19%, 23%);
+    background-size: cover;
+    background-position: relative;
+    background-repeat: no-repeat;
+}
+
+.track {
+    position: relative;
+    min-height: 100vh;
+    display: block;
+    width: 100%;
+    align-items: center;
+    font-size: 25px;
+    padding: 20px;
+}
+
+.track h1 {
+    color: #fff;
+    position: relative;
+}
+
+.track label {
+    font-weight: bold;
+    position: relative;
+    color: #fff;
+    top: 30px;
+}
+
+.track input {
+    height: 40px;
+    position: relative;
+    top: 30px;
+    left: 50px;
+    width: 550px;
+    text-align: center;
+}
+
+.track button {
+    width: 180px;
+    position: relative;
+    font-size: 16px;
+    top: 30px;
+    left: 50px;
+    grid-column: 2 span;
+    font-size: 18px;
+    height: 40px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    background: hsl(278, 68%, 11%);
+    cursor: pointer;
+}
+.track button:hover {
+    color: hsl(278, 68%, 11%);
+    background-color: white;
+}
+
+.track input::placeholder {
+    font-size: 20px;
+}
+
+.track input[type="text"] {
+    font-size: 20px;
+}
+
+.track .result {
+    position: relative;
+    color: #fff;
+    top: 45px;
+}

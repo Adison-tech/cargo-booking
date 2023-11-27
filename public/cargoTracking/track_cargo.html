@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="/cargoTracking/style.css">
+    <title>Cargo Tracking System</title>
+</head>
+<body>
+    <div id="app" class="track">
+        <h1>Track your Cargo Status</h1>
+        <label for="trackingId">Enter Tracking ID:</label>
+        <input type="text" id="trackingId" placeholder="Enter Tracking ID">
+        <button onclick="trackCargo()">Track Cargo</button>
+        <div id="result" class="result"></div>
+        <div id="map" style="width: 100%; height: 100vh; margin-top: 45px;"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
+    <script src="/cargoTracking/script.js" defer></script>
+</body>
+</html>
