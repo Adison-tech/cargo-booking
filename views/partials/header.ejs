@@ -1,0 +1,97 @@
+<%# /views/partials/header.ejs %>
+<header>
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href="/">Cargo.</a></div>
+            <ul class="nav-links">
+                <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                
+                <%# --- Products Mega Menu --- %>
+                <li>
+                    <a href="#" class="desktop-item">Products</a>
+                    <input type="checkbox" id="showMega">
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                              <header>Consumer Goods</header>
+                              <ul class="mega-links">
+                                <li><a href="/clothings">Clothes</a></li>
+                                <li><a href="#">Electronics</a></li>
+                                <li><a href="#">Furnitures</a></li>
+                              </ul>
+                            </div>
+                            <div class="row">
+                              <header>Industrial and Raw materials</header>
+                              <ul class="mega-links">
+                                <li><a href="#">Industrial materials</a></li>
+                                <li><a href="#">Raw Materials</a></li>
+                              </ul>
+                            </div>
+                            <div class="row">
+                              <header>Perishable Cargo</header>
+                              <ul class="mega-links">
+                                <li><a href="#">Food and Beverages</a></li>
+                                <li><a href="#">Medications</a></li>
+                                <li><a href="#">Agricultural Products</a></li>
+                                <li><a href="#">Fragile Items</a></li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <%# Adjusted to new route structure %>
+                <li><a href="/customer/booking/new">Book Cargo</a></li> 
+                <li><a href="/shipment-guides">Shipment guides</a></li>
+                
+                <%# --- About Us Dropdown --- %>
+                <li>
+                    <a href="#" class="desktop-item">About Us</a>
+                    <input type="checkbox" id="showDrop">
+                    <ul class="drop-menu">
+                        <%# Adjusted to new public routes %>
+                        <li><a href="/about">About us</a></li>   
+                        <li><a href="/contact">Contact us</a></li> 
+                    </ul>
+                </li>
+                
+                <%# Track & Trace is public %>
+                <li><a href="/track">Track & Trace</a></li> 
+                
+                <%# --- Login/Logout Actions --- %>
+                <div class="user-actions">
+                    <% if (user) { %> <%# Check for existence of 'user' object %>
+                        <a href="/auth/logout" class="register-button">Logout</a> <%# Adjusted URL %>
+                    <% } else { %>
+                        <a href="/auth/login">Login</a> <%# Adjusted URL %>
+                        <a href="/auth/register" class="register-button" style="color: hsl(203, 19%, 23%); padding: 2px;">Register</a> <%# Adjusted URL %>
+                    <% } %>
+                </div>
+            </ul>
+
+            <%# --- Mobile/Dropdown Menu (Simplified and corrected URLs) --- %>
+            <div class="dropdown_menu">
+                <% if (user) { %>
+                    <li><a href="/customer/profile">Profile</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                <% } else { %>
+                    <li><a href="/auth/login">Login</a></li>
+                    <li><a href="/auth/register">Register</a></li>
+                <% } %>
+            </div>
+            
+            <%# --- User Icon --- %>
+            <div class="user" id="userDiv">
+                <% if (user) { %>
+                    <%# Placeholder for dynamic image or user icon %>
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                <% } else { %>
+                    <ion-icon name="people-outline"></ion-icon>
+                <% } %>
+            </div>
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+        </div>
+    </nav>
+</header>

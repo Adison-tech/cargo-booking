@@ -1,0 +1,340 @@
+/* --- Global Fonts and Reset (Duplicated in style.css for safety, but primary location is style.css) --- */
+/*
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+:root{
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+  --backcolor: hsl(203, 19%, 23%);
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+  --Off-black: hsl(0, 0%, 8%);
+}
+*/
+/* --- Navbar Styles --- */
+nav{
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  margin: 0;
+  background: var(--backcolor);
+}
+nav .wrapper{
+  z-index: 10;
+  position: relative;
+  max-width: 100%;
+  padding: 0px 30px;
+  height: 70px;
+  line-height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  flex: 1;
+}
+.wrapper .logo a{
+  position: relative;
+  color: #f2f2f2;
+  font-size: 30px;
+  left: 0;
+  font-weight: 600;
+  text-decoration: none;
+}
+.wrapper .nav-links{
+  display: flex;
+  flex: 2;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links li{
+  list-style: none;
+}
+.nav-links li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.nav-links li a:hover{
+  background: var(--Very-dark-violet);
+}
+.nav-links{
+  display: none; /* Hidden by default for mobile first approach */
+}
+.nav-links .drop-menu{
+  position: absolute;
+  background: var(--backcolor);
+  width: 180px;
+  line-height: 45px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+.nav-links li:hover .drop-menu,
+.nav-links li:hover .mega-box{
+  transition: all 0.3s ease;
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+.drop-menu li a{
+  width: 100%;
+  display: block;
+  padding: 0 0 0 15px;
+  font-weight: 400;
+  border-radius: 0px;
+}
+.mega-box{
+  position: absolute;
+  left: 200px;
+  width: 100%;
+  padding: 0 30px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+}
+.mega-box .content{
+  background: var(--backcolor);
+  padding: 10px 15px;
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+.content {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.content .row header{
+  color: #f2f2f2;
+  font-size: 20px;
+  font-weight: 500;
+}
+.content .row .mega-links{
+  margin-left: -40px;
+  border-left: 1px solid rgba(255,255,255,0.09);
+}
+.mega-box .content .row{
+  width: calc(25% - 30px);
+  line-height: 45px;
+}
+.row .mega-links li{
+  padding: 0 20px;
+}
+.row .mega-links li a{
+  padding: 0px;
+  padding: 0 20px;
+  color: #d9d9d9;
+  font-size: 15px;
+  display: block;
+}
+.row .mega-links li a:hover{
+  color: #f2f2f2;
+}
+.wrapper .btn{
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.wrapper .btn.close-btn{
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+nav input{
+  display: none;
+}
+/* Style for the Register button */
+.register-button {
+  background-color: white;
+  border-radius: 7%;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s; 
+  display: inline-block;
+}
+
+.register-button:hover {
+  color: white;
+  background-color: var(--Very-dark-violet) 
+}
+
+/* Style for the right side (login and register links) */
+.user-actions {
+  position: relative;
+  right: 30px;
+}
+
+.user-actions a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  margin-left: 30px;
+  margin-right: 25px;
+  transition: .5s;
+}
+.user-actions a:hover {
+  font-weight: bold;
+  color: #fff;
+}
+
+.dropdown_menu {
+    position: absolute;
+    right: 1rem;
+    top: 75px;
+    width: 200px;
+    height: 0;
+    font-size: 13px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: auto;
+}
+
+.dropdown_menu li {
+    padding: 0.5rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.user {
+  position: relative;
+  width: 50px;
+  right: 0;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.user ion-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.toggle {
+  right: 20px;
+  top: 20px;
+  position: absolute;
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+  cursor: pointer;
+}
+
+/* ===================== RESPONSIVE DESIGN (Header) ================== */
+@media (max-width: 1340px) {
+  .wrapper .logo {
+    flex: 0;
+  }
+}
+
+@media (max-width: 1280px) {
+  .wrapper{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .wrapper .logo {
+    flex: 0;
+    font-size: 30px;
+  }
+  .wrapper .nav-links{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: 990px) {
+  .wrapper .nav-links {
+    display: none;
+  }
+  .toggle {
+    display: flex;
+  }
+  .user {
+    display: none;
+  }
+
+  .wrapper .nav-links.open {
+    display: inline-block;
+    position: absolute;
+    margin-top: 600px;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+    right: 20px;
+    border-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 200px;
+    background: var(--backcolor);
+  }
+  .nav-links .drop-menu {
+    display: none;
+  }
+  .mega-box{
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrapper .nav-links.open {
+    display: block;
+    position: relative;
+    width: 200%;
+    margin-right: 0;
+    margin-top: 460px;
+    background: #434343;
+  }
+}

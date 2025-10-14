@@ -1,31 +1,35 @@
 {
-  "name": "cargobookingsystem",
+  "name": "Cargo-booking-system",
   "version": "1.0.0",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "packageManager": "pnpm@10.18.0",
   "dependencies": {
-    "@img/sharp-linux-x64": "^0.33.1",
-    "axios": "^1.6.8",
-    "body-parser": "^1.20.2",
+    "axios": "^1.12.2",
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
     "crypto": "^1.0.1",
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "express-session": "^1.17.3",
-    "fs": "^0.0.1-security",
-    "moment": "^2.30.1",
-    "multer": "^1.4.5-lts.1",
-    "nodemailer": "^6.9.8",
-    "nodemon": "^3.1.4",
-    "passport": "^0.7.0",
-    "sharp": "^0.33.2",
-    "sqlite3": "^5.1.7-rc.0",
-    "unirest": "^0.6.0"
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.2",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1",
+    "path": "^0.12.7",
+    "sqlite3": "^5.1.7"
   },
-  "devDependencies": {},
-  "description": ""
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }

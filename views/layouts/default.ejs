@@ -1,0 +1,67 @@
+<%# /views/layouts/default.ejs %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%# The 'title' variable is passed from the controller (e.g., publicController.js) %>
+    <title><%= title %> | Cargo Booking System</title>
+    
+    <%# --- Fonts --- %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <%# --- Consolidated CSS from /public/css --- %>
+    <%# Assuming 'style.css' is the consolidated file. Use correct relative path based on app.js serving /public %>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css"> 
+    
+    <%# --- Third-party CSS --- %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C600%2C700%2C700italic%7COswald%3A400%2C300%7CVollkorn%3A400%2C400italic'>
+    
+</head>
+<body>
+    
+    <%# --- Header Partial --- %>
+    <%- include('../partials/header') %>
+
+    <main>
+        <%# --- ALERT/FLASH MESSAGE AREA --- %>
+        <%# 'alert' comes from req.session.alert and is passed to the view via the controller %>
+        <% if (alert && alert.message) { %>
+            <div class="alert alert-<%= alert.type || 'info' %>">
+                <%= alert.message %>
+            </div>
+        <% } %>
+        
+        <%# --- UNIQUE VIEW CONTENT (e.g., index.ejs, dashboard.ejs) IS INJECTED HERE --- %>
+        <%- body %> 
+    </main>
+
+    <%# --- Footer Partial --- %>
+    <%- include('../partials/footer') %>
+
+    <%# --- Global Scripts --- %>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script>
+    <%# Assuming main.js holds consolidated client-side JS %>
+    <script src="/js/main.js"></script> 
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
+<%# Snippet from /views/layouts/default.ejs (at the bottom of <body>) %>
+    <%# --- Scripts --- %>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script>
+    
+    <%# Your consolidated script file %>
+    <script src="../js/main.js"></script> 
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
+</body>
+</html>
