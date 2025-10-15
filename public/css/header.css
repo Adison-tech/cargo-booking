@@ -325,7 +325,7 @@ nav {
     .nav-links .register-button,
     .nav-links .login-link { /* Ensure mobile login link gets padding/styling */
         display: block;
-        width: %;
+        width: 100%;
         text-align: center;
         margin: 0;
         padding: 12px 20px !important; /* Match other mobile links */
