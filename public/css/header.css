@@ -31,14 +31,18 @@ nav {
   display: flex;
   justify-content: flex-end; /* Push content to the right edge */
   align-items: center;
-  flex-grow: 1; /* Allow container to take up space */
 }
 
 .user-container {
     display: flex;
     justify-content: flex-end; /* Push content to the right edge */
     align-items: center;
-    flex-grow: 1; /* Allow container to take up space */
+}
+
+.general-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* --- Default Link Styling --- */
@@ -197,6 +201,7 @@ nav {
 .register-button {
     background-color: #fff;
     color: var(--backcolor, #1f2937) !important;
+    text-decoration: none;
     font-weight: 600 !important;
     padding: 6px 14px !important;
     border-radius: 9999px !important; 
@@ -269,7 +274,6 @@ nav {
         top: 70px;
         right: 0;
         width: 100%;
-        max-width: 300px; /* Max width for the fly-out menu */
         height: auto;
         min-height: 100vh;
         padding: 10px 0;
@@ -288,9 +292,8 @@ nav {
     /* Mobile Menu Items */
     .nav-links li {
         width: 100%;
-        text-align: left;
-        padding: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        text-align: center;
+        padding: 10px 20px;
     }
     
     .nav-links li a {
@@ -322,7 +325,7 @@ nav {
     .nav-links .register-button,
     .nav-links .login-link { /* Ensure mobile login link gets padding/styling */
         display: block;
-        width: 100%;
+        width: %;
         text-align: center;
         margin: 0;
         padding: 12px 20px !important; /* Match other mobile links */
