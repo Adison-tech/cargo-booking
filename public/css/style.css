@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+/* REMOVED: @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap'); */
+/* REMOVED: @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700); */
+/* NOTE: The font links have been moved to index.ejs for better performance. */
 
 :root{
   --White: hsl(0, 0%, 100%);
@@ -29,37 +30,62 @@ body a:hover{
      color: var(--Light-red);
 }
 
+/* Improvement: Use semantic line break for layout */
+.grid-item p .line-break {
+  display: block;
+}
+
 main {
     padding-top: 70px; /* Add padding to account for fixed navbar height */
 }
 
-/* Main styles, adjust as needed */
-.container{
-  background-color: hsl(203, 19%, 23%);
-  padding-top: 20px; /* Reduced internal padding since main now handles top space */
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  min-height: 80vh; /* Changed from 100vh to ensure content doesn't overflow */
+.hero-banner {
+  position: relative;
+  height: 90vh;
+  background: 
+    linear-gradient(to right, rgba(0, 0, 0, 1.0) 0%, transparent 60%),
+    url('/images/export-services-cargo.jpg') left center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 5rem;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  overflow: hidden;
 }
-.statement{
-    align-items: center;
-    justify-content: center;
-    color: var(--White);
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    height: 100%;
-    padding: 0 30px;
+
+.hero-text {
+  max-width: 600px;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.4;
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    padding: 2rem;
     text-align: center;
+    background: 
+      linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 70%),
+      url('/images/export-services-cargo.jpg') center/cover no-repeat;
+  }
+
+  .hero-text {
+    font-size: 1.6rem;
+  }
 }
-.statement_img img{
-  height: 80%;
-  width: 100%;
-  object-fit: cover;
-}
+
 .hero {
     text-align: center;
     background-color: var(--Off-white);
@@ -157,7 +183,7 @@ main {
     overflow: hidden;
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     z-index: 1;
   }
   .slideshow .slideshow-inner {
@@ -214,6 +240,11 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .slideshow .slide.is-active .image-container .image {
+    transform: scale(1.05);
   }
   .slideshow .slide .image-container::before {
     content: "";
